@@ -25,10 +25,11 @@ function signup(req, res) {
     Key: filePath,
     Body: req.file.buffer,
   };
+  console.log(params)
   //your bucket name goes where collectorcat is
   //////////////////////////////////////////////////////////////////////////////////
   s3.upload(params, async function (err, data) {
-    console.log(data, "from aws"); // data.Location is our photoUrl that exists on aws
+    console.log(err, data, "from aws"); // data.Location is our photoUrl that exists on aws
     const user = new User({ ...req.body, photoUrl: data.Location });
     try {
       await user.save();
