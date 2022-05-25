@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PokemonCard } from "../../components/PokemonCard/PokemonCard";
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
 
 function Homepage(props) {
     const [pokemons, setPokemons] = useState(null);
@@ -10,10 +10,8 @@ function Homepage(props) {
 
     async function fetchPokemons() {
         const pokemonIndex = await fetchHelper("/api/pokemon/index");
-        console.log("fetchPokemons", pokemonIndex)
         const pokemonUrls = pokemonIndex?.data?.results?.map(pokemon => pokemon.url)
         const newPokemons = await fetchPokemonDetails(pokemonUrls)
-        console.log("fetchPokemonDetails", newPokemons)
         setPokemons(newPokemons)
     }
 

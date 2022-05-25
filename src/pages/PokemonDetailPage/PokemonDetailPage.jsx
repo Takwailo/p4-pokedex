@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tokenService from '../../utils/tokenService'
 
+
 const PokemonDetailPage = () => {
   const { pokemonId } = useParams()
   const [pokemon, setPokemon] = useState(null)
@@ -20,7 +21,6 @@ const PokemonDetailPage = () => {
     fetch(`/api/pokemon/addPokemon/${pokemonId}`, {
       method: 'POST',
       headers: { Authorization: "Bearer " + token },
-
     })
   }
 

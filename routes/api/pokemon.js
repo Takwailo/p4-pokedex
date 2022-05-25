@@ -4,9 +4,8 @@ const pokemonCtrl = require("../../controllers/pokemon");
 
 /*---------- Public Routes ----------*/
 router.get("/index", pokemonCtrl.index);
-router.post("/addPokemon/:id", pokemonCtrl.addPokemon)
-
 
 /*---------- Protected Routes ----------*/
+router.post("/addPokemon/:id", pokemonCtrl.addPokemon)
 
 module.exports = router;

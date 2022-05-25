@@ -31,7 +31,7 @@ async function addPokemon(req, res) {
             return res.status(400).json({ message: "too many pokemons"})
         }
         user.save()
-        res.status(200);
+        res.status(200).json();
     } catch (err) {
         return res.status(400).json(err);
     }

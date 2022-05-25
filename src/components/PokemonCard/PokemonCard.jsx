@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export const PokemonCard = ({ id, name, sprites }) => {
-
+export default function PokemonCard({ id, name, sprites, withDeleteButton, handleDelete }) {
   let navigate = useNavigate()
 
   function handleClick() {
@@ -9,9 +8,10 @@ export const PokemonCard = ({ id, name, sprites }) => {
   }
 
   return (
-    <div className="pokemonCard" key={id} onClick={handleClick} data-id={id}>
-      <img src={sprites.front_default}></img>
+    <div className="pokemonCard" key={id} data-id={id}>
+      <img src={sprites.front_default} onClick={handleClick}></img>
       <p >{name}</p>
+      {withDeleteButton && <button type="submit" onClick={handleDelete}>Release</button>}
     </div>
   )
 }
