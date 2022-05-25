@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Menu } from 'semantic-ui-react'
 
 export default function Navbar({ handleLogout }) {
     return (
-        <div className="navbars">
-            <nav>
-                <Link to="/"><h1>PokeDex</h1></Link>
-                <Link to="" onClick={handleLogout}>Logout</Link>
-                <Link to="/profile">Profile</Link>
-            </nav>
-        </div>
+        <Menu inverted>
+                <Menu.Item position='left'><Link to="/"><h1>PokeDex</h1></Link></Menu.Item>
+                <Menu.Item position='right'><Link to="/profile">Profile</Link></Menu.Item>
+                <Menu.Item ><Link to="" onClick={handleLogout}>Logout</Link></Menu.Item>
+            </Menu>
     );
 }

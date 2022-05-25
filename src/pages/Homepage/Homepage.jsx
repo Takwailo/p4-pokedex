@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { Grid, Card, Container } from 'semantic-ui-react'
 
 function Homepage(props) {
     const [pokemons, setPokemons] = useState(null);
@@ -15,7 +16,7 @@ function Homepage(props) {
         setPokemons(newPokemons)
     }
 
-    function fetchPokemonDetails(pokemonUrls){
+    function fetchPokemonDetails(pokemonUrls) {
         return Promise.all(pokemonUrls.map(pokemonUrl => fetchHelper(pokemonUrl)))
     }
 
@@ -24,9 +25,17 @@ function Homepage(props) {
     }, []);
 
     return (
-        <div className="homepage">
-            {pokemons?.map(pokemon => <PokemonCard key={pokemon.id} {...pokemon}/>)}
-        </div>
+        <Grid centered>
+            <Grid.Row>
+                <Grid.Column>
+                    <Container>
+                    <Card.Group itemsPerRow={6}>
+                        {pokemons?.map(pokemon => <PokemonCard key={pokemon.id} {...pokemon} />)}
+                    </Card.Group>
+                    </Container>
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
     );
 }
 

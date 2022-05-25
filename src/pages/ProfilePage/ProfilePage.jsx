@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import tokenService from '../../utils/tokenService'
+import { Container } from 'semantic-ui-react'
 
 export default function ProfilePage({ user }) {
     const [pokemons, setPokemons] = useState(null);
@@ -26,7 +27,7 @@ export default function ProfilePage({ user }) {
             setPokemons(newPokemons)
             fetch('/api/users/pokemonBag', {
                 method: 'DELETE',
-                headers: { 
+                headers: {
                     Authorization: "Bearer " + token,
                     "Content-Type": "application/json"
                 },
@@ -40,11 +41,13 @@ export default function ProfilePage({ user }) {
     }, []);
 
     return (
-        <div className="profilePage">
-            <h1>{user.username}</h1>
-            <img src={user.photoUrl} />
-            {pokemons?.map((pokemon, index) => <PokemonCard key={index} withDeleteButton={true} handleDelete={handleDelete(index)} {...pokemon} />)}
-        </div>
+        <Container textAlign='center'>
+            <div className="profilePage">
+                <h1>{user.username}</h1>
+                <img src={user.photoUrl} />
+                {pokemons?.map((pokemon, index) => <PokemonCard key={index} withDeleteButton={true} handleDelete={handleDelete(index)} {...pokemon} />)}
+            </div>
+        </Container>
     )
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tokenService from '../../utils/tokenService'
+import { Segment, Image } from 'semantic-ui-react'
 
 
 const PokemonDetailPage = () => {
@@ -30,7 +31,9 @@ const PokemonDetailPage = () => {
 
   return (
     <div className="pokemonDetailPage">
-      {pokemon?.name}
+      <Image src={pokemon?.sprites.front_default} size="medium" floated='left' />
+      <h1>{pokemon?.name}</h1>
+      {pokemon?.types[0].type.name }
       <button type="submit" value={pokemonId} onClick={handleClick}>Catch Pokemon</button>
     </div>
 
