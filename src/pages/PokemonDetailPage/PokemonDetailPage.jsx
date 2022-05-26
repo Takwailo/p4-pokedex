@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tokenService from '../../utils/tokenService'
-import { Segment, Image } from 'semantic-ui-react'
+import { Segment, Image, Container, Grid, Table, Button } from 'semantic-ui-react'
 
 
 const PokemonDetailPage = () => {
@@ -25,18 +25,52 @@ const PokemonDetailPage = () => {
     })
   }
 
+
+
   useEffect(() => {
     fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
   }, []);
 
-  return (
-    <div className="pokemonDetailPage">
-      <Image src={pokemon?.sprites.front_default} size="medium" floated='left' />
-      <h1>{pokemon?.name}</h1>
-      {pokemon?.types[0].type.name }
-      <button type="submit" value={pokemonId} onClick={handleClick}>Catch Pokemon</button>
-    </div>
 
+  return (
+    <Container>
+      <Grid centered>
+        <Grid.Column width={5}>
+          <Image src={pokemon?.sprites.front_default} size='big' rounded />
+        </Grid.Column>
+        <Grid.Column width={5}>
+          <Table celled striped textAlign="center">
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell colSpan='3'><h1>{pokemon?.name.split(" ").map(letter => letter.charAt(0).toUpperCase() + letter.substring(1)).join()}</h1></Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell collapsing> Type:</Table.Cell>
+                <Table.Cell>{pokemon?.types[0].type.name.split(" ").map(letter => letter.charAt(0).toUpperCase() + letter.substring(1)).join()}</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+
+
+            <Table.Footer>
+              <Table.Row>
+                <Table.HeaderCell colSpan='3'>
+
+                  <Button animated type="submit" value={pokemonId} onClick={handleClick}>
+                    <Button.Content hidden>Catch</Button.Content>
+                    <Button.Content visible>
+                      <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" centered/>
+                    </Button.Content>
+                  </Button>
+                </Table.HeaderCell>
+              </Table.Row>
+            </Table.Footer>
+          </Table>
+        </Grid.Column>
+      </Grid>
+    </Container >
   )
 }
 

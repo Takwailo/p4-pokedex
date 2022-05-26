@@ -27,7 +27,7 @@ function signup(req, res) {
         Key: filePath,
         Body: req.file.buffer,
     };
-    console.log(params);
+
     //your bucket name goes where collectorcat is
     //////////////////////////////////////////////////////////////////////////////////
     s3.upload(params, async function (err, data) {

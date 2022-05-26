@@ -14,9 +14,7 @@ async function index(req, res) {
     try {
         const baseURL = "https://pokeapi.co/api/v2/pokemon/";
         const limit = "?limit=151";
-
         const pokemons = await fetchHelper(baseURL + limit);
-        console.log(pokemons)
         res.json({ data: pokemons });
     } catch (error) {
         return res.status(401).json(err);
