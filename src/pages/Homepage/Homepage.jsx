@@ -29,7 +29,7 @@ function Homepage(props) {
             <Grid.Row>
                 <Grid.Column>
                     <Container>
-                    <Card.Group itemsPerRow={6}>
+                    <Card.Group itemsPerRow={6} doubling>
                         {pokemons?.map(pokemon => <PokemonCard key={pokemon.id} {...pokemon} />)}
                     </Card.Group>
                     </Container>
