@@ -39,7 +39,6 @@ function App() {
 
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />} />
         <Route path="/signup" element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />} />

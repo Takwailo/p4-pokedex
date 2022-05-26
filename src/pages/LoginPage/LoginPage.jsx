@@ -3,6 +3,7 @@ import "./LoginPage.css";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
+import logo from "../../logo.png"
 import {
   Button,
   Form,
@@ -52,7 +53,7 @@ export default function LoginPage(props) {
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h2" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/s4LrnlU.png" /> Log-in to your
+            <Image src={logo} /> Log-in to your
             account
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
