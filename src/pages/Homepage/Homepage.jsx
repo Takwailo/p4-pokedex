@@ -14,6 +14,7 @@ function Homepage(props) {
         const pokemonUrls = pokemonIndex?.data?.results?.map(pokemon => pokemon.url)
         const newPokemons = await fetchPokemonDetails(pokemonUrls)
         setPokemons(newPokemons)
+        console.log(newPokemons)
     }
 
     function fetchPokemonDetails(pokemonUrls) {
