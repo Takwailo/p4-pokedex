@@ -21,7 +21,7 @@ detail about the pokemon
 
 
 This application was deployed on Heroku [link to application](https://pokedexwithminigame.herokuapp.com/).
-[Trello](https://trello.com/b/UvnB9QR6/project-4-pokedex).
+###[Trello](https://trello.com/b/UvnB9QR6/project-4-pokedex).
 
 ##Wireframe
 ![Wireframe1](./public/wireframe1.png)
