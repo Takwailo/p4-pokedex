@@ -36,8 +36,6 @@ export default function SignUpPage(props) {
       formData.append(fieldName, state[fieldName])
     }
 
-    // console.log(formData, " <- formData") // <- this doesn't allow you to look at the formdData object
-    // console.log(formData.forEach((item) => console.log(item))); // <- to look at the keys, you must forEach over it
 
     try {
 
@@ -49,7 +47,6 @@ export default function SignUpPage(props) {
       navigate('/')
 
     } catch(err){
-      console.log(err.message);
       setError(err.message)
     }
 
@@ -63,7 +60,6 @@ export default function SignUpPage(props) {
   }
 
   function handleFileInput(e){
-    console.log(e.target.files);
     setSelectedFile(e.target.files[0]);
   }
 
