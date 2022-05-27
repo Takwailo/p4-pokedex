@@ -1,6 +1,6 @@
 # Pokedex
 
-## Index of original 151 pokemon
+Index of original 151 pokemon
 able to catch pakemon
 detail about the pokemon
 
