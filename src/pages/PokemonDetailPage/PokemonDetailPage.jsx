@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tokenService from '../../utils/tokenService'
-import { Image, Container, Grid, Table, Button, Header, Label, Divider } from 'semantic-ui-react'
+import { Image, Container, Grid, Table, Button, Header, Label } from 'semantic-ui-react'
 
 
 const PokemonDetailPage = () => {
@@ -34,7 +34,7 @@ const PokemonDetailPage = () => {
     <div>
       <Container>
         <Header as='h2' icon textAlign='center'>
-          <Image src={pokemon?.sprites.front_default} style={{ width: '250px', height: 'auto' }} />
+          <Image src={pokemon?.sprites.front_default} Bordered Rounded style={{ width: '250px', height: 'auto' }} />
           <Header.Content>{pokemon?.name.split(" ").map(letter => letter.charAt(0).toUpperCase() + letter.substring(1)).join()}</Header.Content>
           {pokemon?.types?.map((types, index) => <Label key={index}>{types.type.name}</Label>)}
         </Header>

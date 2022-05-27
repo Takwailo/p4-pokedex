@@ -44,7 +44,7 @@ export default function ProfilePage({ user }) {
         <Container textAlign='center'>
             <div className="profilePage">
                 <h1>{user.username}</h1>
-                <img src={user.photoUrl} />
+                <Image src={user.photoUrl} Bordered Circular/>
                 {pokemons?.map((pokemon, index) => <PokemonCard key={index} withDeleteButton={true} handleDelete={handleDelete(index)} {...pokemon} />)}
             </div>
         </Container>
