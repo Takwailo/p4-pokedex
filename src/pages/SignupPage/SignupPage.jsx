@@ -47,6 +47,7 @@ export default function SignUpPage(props) {
       navigate('/')
 
     } catch(err){
+      console.log(err.message);
       setError(err.message)
     }
 
