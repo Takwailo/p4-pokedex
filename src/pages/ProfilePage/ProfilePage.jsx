@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import tokenService from '../../utils/tokenService'
 import { Container } from 'semantic-ui-react'
+import { Image } from "semantic-ui-react";
 
 export default function ProfilePage({ user }) {
     const [pokemons, setPokemons] = useState(null);
