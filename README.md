@@ -1,37 +1,29 @@
-## Setup 
+#Pokedex
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+##Index of original 151 pokemon
+able to catch pakemon
+detail about the pokemon
+
+##Screenshot
+![Login](../public/log%20in.png)
+![Login](../public/signup.png)
+![Login](../public/index.png)
+![Login](../public/detail.png)
+![Login](../public/profile.png)
+
+##Technologies Used: 
+- MongoDB
+- Express
+- React
+- Node
+- Pokemon API
+- Semantic UI
 
 
-#### Setup your git repo
+This application was deployed on Heroku [link to application](https://pokedexwithminigame.herokuapp.com/).
+[Trello](https://trello.com/b/UvnB9QR6/project-4-pokedex).
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2. Then you can run the following commands in the root of your project 
+##A link to the deployed app (Heroku)
+##A link to the Trello board used for the project's planning that includes user stories, wireframes & an ERD.
+##☐ Next Steps: Planned future enhancements (icebox items).
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be, look at the address in the code github gives you!
-git push -u origin main
-```
-
-#### Setup the App
-
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
