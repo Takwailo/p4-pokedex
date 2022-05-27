@@ -1,17 +1,17 @@
-#Pokedex
+# Pokedex
 
-##Index of original 151 pokemon
+## Index of original 151 pokemon
 able to catch pakemon
 detail about the pokemon
 
-##Screenshot
+## Screenshot
 ![Login](./public/log%20in.png)
 ![Login](./public/signup.png)
 ![Login](./public/index.png)
 ![Login](./public/detail.png)
 ![Login](./public/profile.png)
 
-##Technologies Used: 
+## Technologies Used: 
 - MongoDB
 - Express
 - React
@@ -21,19 +21,19 @@ detail about the pokemon
 
 
 This application was deployed on Heroku [link to application](https://pokedexwithminigame.herokuapp.com/).
-###[Trello](https://trello.com/b/UvnB9QR6/project-4-pokedex).
+### [Trello](https://trello.com/b/UvnB9QR6/project-4-pokedex).
 
-##Wireframe
+## Wireframe
 ![Wireframe1](./public/wireframe1.png)
 ![Wireframe2](./public/wireframe2.png)
 ![Wireframe3](./public/wireframe3.png)
 ![Wireframe4](./public/wireframe4.png)
 
-##ERD
+## ERD
 ![ERD](./public/ERD.png)
 
 
-##Next Steps: 
+## Next Steps: 
 - improve index page.
 - improve detail page.
 - improve profile page.
