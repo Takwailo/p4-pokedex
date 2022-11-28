@@ -12,7 +12,6 @@ function signup(user) {
       body: user,
     })
       .then((res) => {
-        console.log(res)
         if (res.ok) return res.json();
         // Probably a duplicate email
         throw new Error("Email already taken!");
